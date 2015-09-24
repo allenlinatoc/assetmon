@@ -11,7 +11,8 @@ This tool recursively monitors and compiles all web assets so that web applicati
 ## Getting started ##
 
 ### 1. Configure `assetmon.json` ###
-Note: `assetmon.json` is the default configuration file of **assetmon**.
+
+> Note: `assetmon.json` is the default configuration file of **assetmon**.
 
 
 The snippet below is the default content of `assetmon.json`:
@@ -37,14 +38,14 @@ The snippet below is the default content of `assetmon.json`:
 
 1. #### `extensions (array)` ####
 
-	**Default:** `[ "js", "css" ]`
+	> **Default:** `[ "js", "css" ]`
 	
 	An array of file extensions to be included in asset monitoring.
 
 
 2. #### `directories (array)` ####
 
-	**Default:** `[ "./" ]`
+	> **Default:** `[ "./" ]`
 	
 	An array of existing directories to be included in recursive file monitoring.
 	**Symbolic paths** are allowed.
@@ -52,7 +53,7 @@ The snippet below is the default content of `assetmon.json`:
 
 3. #### `destination (string)` ####
 
-	**Default:** `"./assets"`
+	> **Default:** `"./assets"`
 
 	The path to destination folder. If path does not exist, it will automatically be created.
 	**Symbolic paths** are allowed.
@@ -60,7 +61,7 @@ The snippet below is the default content of `assetmon.json`:
 
 4. #### `recursive (boolean)` ####
 
-	**Default:** `true`
+	> **Default:** `true`
 
 	Boolean value if assets (from `directories`) will be recursively monitored.
 
@@ -68,9 +69,18 @@ The snippet below is the default content of `assetmon.json`:
 
 ### 2. Start `assetmon` ###
 
-Extract/Copy **assetmon** folder to your current working directory and make sure that `assetmon.json` is properly configured and is inside that directory.
+Copy **assetmon** to your current working directory and make sure that `assetmon.json` is properly configured and is in the same directory.
 
-Now execute the script through PHP:
+> **Note:** `assetmon` file is a GZip compressed PHP archive
+
+Optionally, you can specify the configuration to be used through `config` argument.
+
+**Console command syntax**
+	
+	$ php assetmon [config]
+
+
+If you work with an existing `assetmon.json` config file, you can follow the simple syntax below:
 
     $ php assetmon/assetmon
 
@@ -108,4 +118,4 @@ Only existing directories/paths will be processed in *recursive monitoring*.
 
 Outputs expected are `./public/assets/all.js` and `./public/assets/all.css`, respectively.
 
-**Note:** Whether the script found such file extensions from the given directories, it will still produce the mentioned files with respect to the specified `extensions`.
+> **Note:** Whether the script found such file extensions from the given directories, it will still produce the mentioned files with respect to the specified `extensions`.
