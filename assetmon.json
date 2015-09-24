@@ -1,0 +1,16 @@
+{
+    
+    "extensions": [
+        "js",
+        "css"
+    ],
+    
+    "directories" : [
+        "./sample"
+    ],
+    
+    "destination" : "./asset_ko",
+    
+    "recursive" : true
+    
+}

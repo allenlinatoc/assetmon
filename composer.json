@@ -1,0 +1,22 @@
+{
+    
+    "name" : "Assetmon",
+    
+    "description" : "A quick asset monitoring and compression PHP script",
+    
+    "license" : "MIT",
+    
+    "require" : {
+        "php" : ">=5.4.0",
+        "mrclay/minify" : ">=2.2.1"
+    },
+    
+    "extra" : {
+        "phar-builder" : {
+            "name" : "assetmon.phar",
+            "output-dir" : "../",
+            "entry-point" : "assetmon.php"
+        }
+    }
+    
+}
