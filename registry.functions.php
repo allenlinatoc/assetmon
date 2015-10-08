@@ -97,21 +97,24 @@ function summarize_registry()
             echo sprintf("[Deleted] %s\n-- %s\n\n", date('H:i:s'), $filename);
             continue;
         }
-        if ($ext == 'css')
-        {
-            $summarized .= Minify_CSS::minify(file_get_contents($filename));
-        }
-        else if ($ext == 'js')
-        {
-            $summarized .= JSMinPlus::minify(file_get_contents($filename));
-        }
-        else
-        {
-            $summarized .= file_get_contents($filename);
-        }
+
+        $summarized .= trim(file_get_contents($filename));
 
         if (!isset($summasummarum[$ext]))
             $summasummarum[$ext] = "";
+
+        if ($ext == 'css')
+        {
+            $summarized = Minify_CSS::minify(file_get_contents($filename));
+        }
+        else if ($ext == 'js')
+        {
+            $summarized = JSMinPlus::minify(file_get_contents($filename));
+        }
+        else
+        {
+            $summarized = trim(file_get_contents($filename));
+        }
 
         $summasummarum[$ext] .= $summarized;
     }
